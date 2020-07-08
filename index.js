@@ -19,7 +19,7 @@ mongoose.connect(mongoUrl, {
 });
 
 mongoose.connection.on("connected", () => {
-  console.log("connected to mongo yeah");
+  console.log("connected to mongodb");
 });
 
 mongoose.connection.on("error", (err) => {
@@ -33,8 +33,7 @@ app.get("/", requireToken, (req, res) => {
 app.use(bodyParser.json());
 
 app.post("/", (req, res) => {
-  console.log(req.body);
-  res.send("hello");
+  res.send("testing connection");
 });
 
 app.listen(PORT, () => {
